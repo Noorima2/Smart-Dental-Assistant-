@@ -100,7 +100,7 @@ st.markdown(
     """
     <style>
         .main {
-            background-color:white!important;
+            background-color:!important;
         }
         .chat-container {
             display: flex;
