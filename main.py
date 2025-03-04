@@ -164,19 +164,8 @@ uploaded_file = st.file_uploader("Upload an image for analysis", type=["jpg", "p
 if uploaded_file:
     image = Image.open(io.BytesIO(uploaded_file.getvalue()))
     st.image(image, width=200, caption="Uploaded Image")
-    
-    image_description = st.text_input("Describe the image (optional):")
-    
 
-    if st.button("Analyze Image"):
-        input_data = [image]
-        if image_description:
-            input_data.append(image_description) 
-    st.markdown(f'<div class="chat-row" style="justify-content: flex-end;">'
-                f'</div>', unsafe_allow_html=True)
-   
-
-    gemini_response = st.session_state.chat_session.send_message([image_description])
+    gemini_response = st.session_state.chat_session.send_message([image])
     st.markdown(f'<div class="chat-row" style="justify-content: flex-start;">'
                 f'<div class="chat-message bot-message">{gemini_response.text}</div>'
                 f'</div>', unsafe_allow_html=True)
