@@ -22,9 +22,9 @@ gen_ai.configure(api_key=GOOGLE_API_KEY)
 model = gen_ai.GenerativeModel('gemini-2.0-flash')
 
 # Define a system prompt for guiding the AI responses
-SYSTEM_PROMPT = """""
+SYSTEM_PROMPT = os.getenv("SYSTEM_PROMPT")
+print(SYSTEM_PROMPT)
 
-"""
 # Function to translate roles between Gemini and Streamlit terminology
 def translate_role_for_streamlit(user_role):
     return "assistant" if user_role == "model" else user_role
@@ -39,6 +39,7 @@ st.title("🦷 Salamatk - ChatBot")
 
 # Custom CSS for improved chat alignment
 st.markdown(
+
     """
     <style>
         .main {
@@ -106,7 +107,7 @@ uploaded_file = st.file_uploader("Upload an image for analysis", type=["jpg", "p
 if uploaded_file:
     image = Image.open(io.BytesIO(uploaded_file.getvalue()))
     st.image(image, width=200, caption="Uploaded Image")
-
+        
     gemini_response = st.session_state.chat_session.send_message([image])
     st.markdown(f'<div class="chat-row" style="justify-content: flex-start;">'
                 f'<div class="chat-message bot-message">{gemini_response.text}</div>'
