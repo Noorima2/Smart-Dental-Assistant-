@@ -43,19 +43,20 @@ with st.expander("💡 How to Use this Bot"):
     st.markdown(
         """
      Enter Your Symptoms: 
-        Describe your symptoms in detail, such as "I feel pain in my molar when eating" or "I have gum bleeding".
-
+        Describe your symptoms in detail, such as "I feel pain in my molar when eating" or "I have gum bleeding".\n
+                 إدخال الأعراض: اكتب وصفًا لحالتك الصحية الفموية
      Upload an Image (Optional) 📸: 
-        If you want the bot to analyze a picture of your teeth or gums, you can upload a clear image.The bot will examine the image and provide observations about your condition.
-
+        If you want the bot to analyze a picture of your teeth or gums, you can upload a clear image.The bot will examine the image and provide observations about your condition.\n
+                    رفع صورة (اختياري) : يمكنك رفع صورة واضحة للأسنان أو اللثة
      Receive Diagnosis & Recommendations 🩺:
-        After submitting your details, the bot will analyze them and provide a preliminary diagnosis, along with immediate care advice and whether you should visit a dentist.
+        After submitting your details, the bot will analyze them and provide a preliminary diagnosis, along with immediate care advice and whether you should visit a dentist.\n
+                    تلقي التشخيص والنصائح : سيقدم لك البوت تشخيصًا مبدئيًا ونصائح للعناية
+     💡 Tip: If you have any special medical conditions, mention them in your message for a more accurate diagnosis.\n
+                   نصيحة:إذا كانت لديك حالة طبية خاصة، يُفضل ذكرها
+     👩‍⚕️ Note: This bot provides guidance only and does not replace a professional dental consultation.\n
+                 ملاحظة:هذا البوت يقدم نصائح استرشادية فقط ولا يُغني عن استشارة الطبيب
+    """, unsafe_allow_html=True
 
-     💡 Tip: If you have any special medical conditions, mention them in your message for a more accurate diagnosis.
-            
-     👩‍⚕️ Note: This bot provides guidance only and does not replace a professional dental consultation.
-    )
-    """
     )
 
 # Custom CSS for improved chat alignment
@@ -91,6 +92,8 @@ st.markdown(
         .bot-message {
             background-color: #0077B6;
             color: white;
+                        margin-bottom: 15px !important;
+
             text-align: left;
         }
         @media screen and (max-width: 600px) {
@@ -102,6 +105,9 @@ st.markdown(
         input[type="text"]:focus {
             border-color: #0077B6 !important;
             outline: none !important;
+        }
+        .stChatMessage {
+            margin-bottom: 15px !important;
         }
     </style>
     """,
