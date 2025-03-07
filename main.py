@@ -72,6 +72,24 @@ st.markdown(
             flex-direction: column;
             gap: 10px;
         }
+        .stChatMessage {
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 10px;
+            max-width: 75%; 
+        }
+        .stChatMessage div {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .stChatMessage[data-testid="stMessage-user"] {
+            background-color: #DCF8C6; /* لون مشابه لتطبيقات الدردشة */
+            align-self: flex-end;
+        }
+        .stChatMessage[data-testid="stMessage-bot"] {
+            background-color: #F1F0F0;
+            align-self: flex-start;
+        }
         .chat-row {
             display: flex;
             justify-content: space-between;
@@ -105,9 +123,6 @@ st.markdown(
         input[type="text"]:focus {
             border-color: #0077B6 !important;
             outline: none !important;
-        }
-        .stChatMessage {
-            margin-bottom: 15px !important;
         }
     </style>
     """,
